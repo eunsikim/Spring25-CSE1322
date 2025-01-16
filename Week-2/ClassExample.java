@@ -15,15 +15,12 @@ public class ClassExample {
         int[] numbers = new int[10];
         int lastIndex = -1;
 
-        boolean loop = true;
-
 
 for(int i = 0; i < 10; i++){
     System.out.println("Enter a number, enter -1 to stop: ");
     int input = sc.nextInt();
 
     if(input == -1){
-        loop = false;
         break;
     }
     else{
