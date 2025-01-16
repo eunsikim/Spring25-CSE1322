@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class classExcercise1 {
+public class ClassExcercise1 {
     public static void main(String[] args) {
         double amount;
         double rate;
