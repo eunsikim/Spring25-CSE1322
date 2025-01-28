@@ -21,7 +21,17 @@ public class Sandbox1 {
         System.out.println(message);
     }
 
+    public static int fn(int x){
+        x += 5;
+
+        return x;
+    }
+        
     public static void main(String[] args) {
-        print("Hello World");
+        int x = 10;
+
+        x = fn(x);
+
+        System.out.println(x);
     }
 }
