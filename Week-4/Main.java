@@ -1,16 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        Student s1;
         Student s2 = new Student("John", "Doe", "jdoe@students.kennesaw.edu");
-
-        if(s2.sendEmail("Hello, John!")){
-            System.out.println("Email sent successfully!");
+        
+        for(int i = 0; i < 10; i++){
+            s2.updateAssignment(i, 60);
         }
-        else{
-            System.out.println("Failed to send the email!");
-        }
-        System.out.println(s2.first_name + " " + s2.last_name);
 
-        System.out.println(s2);
+        System.out.println(s2.grade);
+
+        s2.grade = 100;
+
+        System.out.println(s2.grade);
     }
 }
