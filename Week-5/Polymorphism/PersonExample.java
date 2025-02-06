@@ -53,7 +53,14 @@ public class PersonExample {
         people[2] = new Person("asd", "asdf");
 
         for(Person p : people){
-            
+            if(p instanceof Student){
+                Student temp = (Student)p;
+
+                System.out.println(temp.getGPA());
+            }
+            else{
+                p.action();
+            }
         }
         
     }
