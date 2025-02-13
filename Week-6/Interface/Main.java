@@ -1,8 +1,10 @@
+import java.security.PublicKey;
+
 abstract class Animal{
-    boolean is_alive;
+    boolean isAlive;
 
     public Animal(){
-        is_alive = true;
+        isAlive = true;
     }
 
     public abstract void make_noise();
@@ -12,6 +14,7 @@ abstract class Bird extends Animal{
     boolean isEggLaying;
 
     public Bird(boolean isEggLaying){
+        super();
         this.isEggLaying = isEggLaying;
     }
 }
@@ -20,6 +23,7 @@ abstract class Mammal extends Animal{
     boolean isViviparous;
 
     public Mammal(boolean isViviparous){
+        super();
         this.isViviparous = isViviparous;
     }
 }
@@ -52,7 +56,7 @@ class Bat extends Mammal implements IFlyable{
 
     @Override
     public void make_noise(){
-        System.out.println("Bat is schreeching");
+        System.out.println("Bat is screeching");
     }
 
     @Override
@@ -61,24 +65,24 @@ class Bat extends Mammal implements IFlyable{
     }
 }
 
-class Platypus extends Mammal implements IWalkable, ISwimmable{
+class Platypus extends Mammal implements ISwimmable, IWalkable{
     public Platypus(boolean isViviparous){
         super(isViviparous);
     }
 
-    @Override
+    @Override 
     public void make_noise(){
         System.out.println("Platypus is growling");
     }
 
     @Override
-    public void walk(){
-        System.out.println("Platypus is walking");
+    public void swim(){
+        System.out.println("Platypus is swimming");
     }
 
     @Override
-    public void swim(){
-        System.out.println("Platypus is swimming");
+    public void walk(){
+        System.out.println("Platypus is walking");
     }
 }
 
@@ -98,7 +102,7 @@ class Blue_Jay extends Bird implements IFlyable{
     }
 }
 
-class Penguin extends Bird implements ISwimmable, IWalkable{ 
+class Penguin extends Bird implements ISwimmable, IWalkable{
     public Penguin(boolean isEggLaying){
         super(isEggLaying);
     }
@@ -112,7 +116,7 @@ class Penguin extends Bird implements ISwimmable, IWalkable{
     public void swim(){
         System.out.println("Penguin is swimming");
     }
-
+    
     @Override
     public void walk(){
         System.out.println("Penguin is walking");
@@ -142,9 +146,10 @@ public class Main {
         myAnimals[4] = new Penguin(false);
 
         for(Animal a : myAnimals){
-            if(a instanceof ISwimmable){
-                ISwimmable temp = (ISwimmable) a;
-                temp.swim();
+            if(a instanceof IFlyable){
+                IFlyable temp = (IFlyable) a;
+
+                temp.fly();
             }
         }
     }
