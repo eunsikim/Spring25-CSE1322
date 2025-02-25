@@ -1,18 +1,21 @@
 public class Counter {
-    public static void counter(int number){
-        // Base case: Since we count from number to 
-        // 0, we should stop at -1
-        if(number < 0){
+    public static void count(int n){
+        // Base case
+        if(n == 0){
             return;
         }
+        System.out.println("Count: " + n);
         
-        // Recursive Call: Since we count from number 
-        // to 0, each call should decrease number by 1
-        counter(number - 1);
-        System.out.println("Counter: " + number);
-    }
-
+        // Recursive call
+        count(n-1);
+    } 
     public static void main(String[] args) {
-        counter(10);
+        int number = 5;
+
+        // for(int i = 0; i <= number; i++){
+        //     System.out.println("Count: " + (number - i));
+        // }
+
+        count(number);
     }
 }
