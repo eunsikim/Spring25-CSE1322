@@ -139,6 +139,8 @@ public class Main {
     public static void main(String[] args) {
         Animal[] myAnimals = new Animal[5];
 
+        IFlyable m1 = new IFlyable();
+
         myAnimals[0] = new Flying_Squirrel(false);
         myAnimals[1] = new Bat(false);
         myAnimals[2] = new Platypus(false);
