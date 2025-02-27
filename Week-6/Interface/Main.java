@@ -1,7 +1,6 @@
-import java.security.PublicKey;
-
 abstract class Animal{
     boolean isAlive;
+
 
     public Animal(){
         isAlive = true;
