@@ -23,8 +23,8 @@ public class MergeSortEx {
             }
         }
 
-        mergeSort(leftArray);
-        mergeSort(rightArray);
+        mergeSort(leftArray); // 4
+        mergeSort(rightArray); // 1
         sort(leftArray, rightArray, array);
     }
 

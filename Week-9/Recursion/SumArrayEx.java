@@ -1,5 +1,5 @@
 public class SumArrayEx {
-    public static int sumArray(int[] numbers, int index){
+    private static int sumArray(int[] numbers, int index){
         if(numbers.length == index){
             return 0;
         }
@@ -7,7 +7,11 @@ public class SumArrayEx {
         return sumArray(numbers, index + 1) + numbers[index];
     }
 
+    public static int sumArray(int[] numbers){
+        return sumArray(numbers, 0);
+    }
+
     public static void main(String[] args) {
-        System.out.println(sumArray(new int[]{3, 4, 1, 5, 6}, 0));
+        System.out.println(sumArray(new int[]{3, 4, 1, 5, 6}));
     }
 }

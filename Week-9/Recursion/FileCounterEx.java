@@ -51,6 +51,5 @@ public class FileCounterEx{
         File f9 = new File("C:\\", new File[]{f6, f8});
 
         System.out.println(fileCounter(f9));
-        System.out.println(fileCounter(f2));
     }
 }
