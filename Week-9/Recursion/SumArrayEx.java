@@ -1,7 +1,7 @@
 public class SumArrayEx {
     private static int sumArray(int[] numbers, int index){
-        if(numbers.length == index){
-            return 0;
+        if(index == numbers.length - 1){
+            return numbers[index];
         }
 
         return sumArray(numbers, index + 1) + numbers[index];
@@ -12,6 +12,6 @@ public class SumArrayEx {
     }
 
     public static void main(String[] args) {
-        System.out.println(sumArray(new int[]{3, 4, 1, 5, 6}));
+        System.out.println("Sum: " + sumArray(new int[]{2, 4, 2, 6}));
     }
 }

@@ -1,13 +1,13 @@
 public class StringReverseEx {
-    public static String reverse_string(String someString){
-        if(someString.isEmpty()){
-            return someString;
+    public static String string_reverse(String word){
+        if(word.length() == 1){
+            return word;
         }
 
-        return reverse_string(someString.substring(1)) + someString.charAt(0);
+        return string_reverse(word.substring(1)) + word.charAt(0);
     }
 
     public static void main(String[] args) {
-        System.out.println(reverse_string("ABCD"));
+        System.out.println(string_reverse("ABCD"));
     }
 }

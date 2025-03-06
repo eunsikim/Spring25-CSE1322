@@ -1,6 +1,12 @@
 public class FibonacciEx {
     public static int Fib(int n){
-        if((n == 1) || (n == 2)){
+        if(n == 0){
+            return 0;
+        }
+        else if(n == 1){
+            return 1;
+        }
+        else if(n == 2){
             return 1;
         }
 
@@ -8,6 +14,6 @@ public class FibonacciEx {
     }
 
     public static void main(String[] args) {
-        System.out.println(Fib(6));
+        System.out.println(Fib(5));
     }
 }
