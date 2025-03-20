@@ -8,7 +8,7 @@ public class OpenWeatherAPI {
         final String HOST = "api.openweathermap.org";
         final int PORT = 80;
         final String CITY = "Atlanta";
-        final String API_KEY = "5d234983a5ac5e5ebe731ecbacbabd8c";  //a761744210dface291fb03c42021baad
+        final String API_KEY = "YOUR KEY";  //
         final String REQUEST_PATH = "/data/2.5/weather?q=" + CITY + "&appid=" + API_KEY + "&units=imperial";
 
         try (
