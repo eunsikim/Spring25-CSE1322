@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 class Order{
     private static int nextOrderNum = 1000;
@@ -25,20 +27,29 @@ class Order{
 }
 
 class OrderQueue{
-    private ArrayList<Order> theOrders = new ArrayList<>();
+    // private ArrayList<Order> theOrders = new ArrayList<>();
+    private List<Order> theOrders;
+
+    public OrderQueue(){
+        theOrders = Collections.synchronizedList(new ArrayList<>());
+    }
 
     public void addOrder(Order newOrder){
         theOrders.add(newOrder);
     }
 
     public boolean isEmpty(){
-        return theOrders.size() == 0;
+        synchronized(theOrders){
+            return theOrders.size() == 0;
+        }
     }
 
     public Order getNextOrder(){
-        Order nextOrder = theOrders.get(0);
-        theOrders.remove(0);
-        return nextOrder;
+        synchronized(theOrders){
+            Order nextOrder = theOrders.get(0);
+            theOrders.remove(0);
+            return nextOrder;
+        }
     }
 }
 

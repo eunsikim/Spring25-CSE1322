@@ -7,7 +7,7 @@ class Dog implements Runnable {
     }
 
     public void run() {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println ("Dog:"+ID+"\tat:"+i);
         }
     }

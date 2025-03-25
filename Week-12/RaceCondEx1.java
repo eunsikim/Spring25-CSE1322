@@ -1,7 +1,7 @@
 class BankAccount {
     int balance = 100;
 
-    public void withdraw(int amount) {
+    public synchronized void withdraw(int amount) {
         if (balance >= amount) {
             try {
                 // Delay to simulate moeny being widthrawn
@@ -43,8 +43,8 @@ public class RaceCondEx1 {
         t1.start();
         t2.start();
 
-        // t1.join();
-        // t2.join();
+        t1.join();
+        t2.join();
 
         System.out.println("Final balance: $" + sharedAccount.balance);
     }
