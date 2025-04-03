@@ -1,4 +1,5 @@
 import java.util.PriorityQueue;
+import java.util.Comparator;
 
 class Patient{
     private String name;
@@ -23,9 +24,24 @@ class Patient{
     }
 }
 
+class TriageLevelComparator implements Comparator<Integer>{
+    @Override
+    public int compare(Integer x, Integer y){
+        if(x <= y){
+            return 1;
+        }
+        else if(x > y){
+            return -1;
+        }
+        return 0;
+    }
+}
+
 public class PriorityQueueEx1 {
     public static void main(String[] args) {
-        PriorityQueue<Patient> patients = new PriorityQueue<>((b, a) -> Integer.compare(a.getTriageLvl(), b.getTriageLvl()));
+        Comparator<Integer> comparator = new TriageLevelComparator();
+        PriorityQueue<Patient> patients = new PriorityQueue<>((a, b) -> comparator.compare(a.getTriageLvl(), b.getTriageLvl()));
+
 
         patients.add(new Patient("Alice", 1));
         patients.add(new Patient("Bob", 5));
