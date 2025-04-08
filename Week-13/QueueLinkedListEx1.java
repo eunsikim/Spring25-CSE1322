@@ -37,10 +37,12 @@ class Queue{
         }
 
         int res = front.data;
+
         front = front.next;
 
         return res;
     }
+
 }
 
 public class QueueLinkedListEx1 {

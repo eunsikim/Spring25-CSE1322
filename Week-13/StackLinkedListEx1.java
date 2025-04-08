@@ -31,10 +31,9 @@ class Stack{
         if(top == null){
             return -1;
         }
-
+        
         int res = top.data;
         top = top.next;
-
         return res;
     }
 
