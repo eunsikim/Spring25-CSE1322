@@ -40,14 +40,14 @@ class BST{
         return current;
     }
 
-public void print(node current){
-    if(current != null){
-        print(current.left);
-        System.out.print(current.data + " ");
-        print(current.right);
-    }
+    public void print(node current){
+        if(current != null){
+            System.out.print(current.data + " ");
+            print(current.left);
+            print(current.right);
+        }
 
-}
+    }
 }
 
 public class BST_Ex1 {
