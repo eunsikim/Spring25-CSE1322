@@ -2,12 +2,12 @@ import java.util.HashMap;
 
 public class wordCounter {
     public static void main(String[] args) {
-        String word = "BananaBananaBananaBananaBananaBananaBanana";    
-        word = word.toLowerCase();
+        String word = "BananaBananaBananaBananaBananaBananaBanana";
+        word = word.toLowerCase(); 
 
         HashMap<Character, Integer> found = new HashMap<>();
 
-        int counter = 1;
+        int op = 1;
 
         for(char c : word.toCharArray()){
             if(found.containsKey(c)){
@@ -16,11 +16,11 @@ public class wordCounter {
             else{
                 found.put(c, 1);
             }
-            System.out.println("Operation #" + counter++);
+            System.out.println("Operation #" + op++);
         }
 
-        for(char c : found.keySet()){
-            System.out.println("Letter " + c + ": " + found.get(c));
+        for(char key : found.keySet()){
+            System.out.println(key + ": " + found.get(key));
         }
     }
 }

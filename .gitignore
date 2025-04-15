@@ -1,4 +1,3 @@
 *.class
-test.java
-test.py
+test.*
 tempCodeRunnerFile.java
